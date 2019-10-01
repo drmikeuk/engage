@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+{% include head.html %}
+
+<body>
+
+{{ content }}
+
+
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="{{ "/vendor/jquery-3.3.1.slim.min.js " | prepend: site.baseurl }}"></script>
+<script src="{{ "/vendor/popper.min.js " | prepend: site.baseurl }}"></script>
+<script src="{{ "/vendor/bootstrap-4.3.1.min.js " | prepend: site.baseurl }}"></script>
+
+{% if page.customjs %}
+<!-- custom js -->
+{% for jsfile in page.customjs %}
+<script src='{{ jsfile | prepend: site.baseurl }}' type="text/javascript"></script>
+{% endfor %}
+{% endif %}
+
+</body>
+</html>

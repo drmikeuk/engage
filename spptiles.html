@@ -1,0 +1,51 @@
+---
+layout: blank
+title: "SPP Tiles example"
+customjsXXX:
+  - /vendor/isotope.pkgd.min.js
+  - /assets/spptiles.isotope.js
+  - VM: computer icon too,fas fa-desktop
+---
+<style>
+body            {background: #f2f2f2}
+.grid           {margin: 2rem 0; /*display: flex; flex-direction: row; justify-content: center;*/}
+.card           {width: 18rem; min-height: 20rem; margin-right: 2rem; margin-bottom: 2rem; float: left; font-size: 1rem; background: white; text-align: center}
+.card h4        {min-height: 60px; font-weight: normal}
+.card .icon     {font-size: 5rem/* WAS 8 */; color: #007ca7; margin: 1rem} /* blue1: 009bbd. blue2: 007ca7. blue3: 005597.*/
+.card .category {font-size: 0.8rem;}
+
+</style>
+
+
+<!-- HEADER -->
+<div class="header">
+  <div class="container">
+    <div class="title">
+      <h1>SPP Tiles</h1>
+      <p class="hidden-xs">Mockup of tiles and icons</p>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+
+<!-- CARDS -->
+<div class="grid clearfix">
+
+
+<!--  Cards2: from CSV file  eg <i class="fas fa-external-link-alt"></i>  -->
+{% for tile in site.data.spptiles %}
+  <div class="card {{ tile.OS }}  {{ tile.Destination }} ">
+    <div class="card-body">
+      <h4 class="tile-title">{{ tile.Title }}</h4>
+      <i class="icon {{ tile.Icon }} "></i>
+      <p class="category">Description...</p>
+    </div>
+  </div>
+{% endfor %}
+
+
+</div> <!-- end grid -->
+
+
+</div>
