@@ -1,6 +1,7 @@
 Title,Icon
 AD Group,fas fa-users
-High Performance Windows,fab fa-windows
+High Performance Windows storage,fab fa-windows
+High Performance Windows VM,fab fa-windows
 HPC: High Performance Computer,fas fa-server
 Storage (Netapp),fas fa-hdd
 Storage Archive (Arkivum),fas fa-archive
