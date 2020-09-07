@@ -1,0 +1,76 @@
+---
+layout: blank
+title: "Cities"
+---
+<style>
+body            {background: #f2f2f2}
+.grid           {margin: 2rem 0; /*display: flex; flex-direction: row; justify-content: center;*/}
+.card           {width: 15rem; min-height: 20rem; margin-right: 2rem; margin-bottom: 2rem; float: left; font-size: 1rem; background: white; text-align: center}
+.card h4        {min-height: 60px; font-weight: normal}
+.card .icon     {font-size: 5rem/* WAS 8 */; color: #007ca7; margin: 1rem} /* blue1: 009bbd. blue2: 007ca7. blue3: 005597.*/
+.card .category {font-size: 0.8rem;}
+
+.card-title     {text-align: left}
+.card-text      {text-align: left; font-size: 90%}
+.card-img-top   {height: 140px}
+
+.header         {background: url(Nottingham.jpg) no-repeat center center;  background-size: cover; min-height: 500px; padding-top: 20px; border-bottom: 0; margin-bottom: 30px}
+.header .title  {width: 45%; color: white; /*background: rgba(204, 204, 204, 0.8); padding: 10px; */}
+.title p        {margin-botton: 0}
+
+h2              {margin-top: 30px}
+</style>
+
+
+<!-- HEADER -->
+<div class="header">
+  <div class="container">
+    <div class="title">
+      <h1>Global Cities free of Slavery</h1>
+      <p class="hidden-xs">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam posuere consectetur mi, non luctus justo porttitor id. Vivamus dignissim, tortor nec fermentum finibus, augue lorem euismod nisi.</p>
+    </div>
+  </div>
+</div>
+
+
+<!-- CONTENT -->
+<div class="container">
+
+  <!-- RESEARCH INTRO -->
+  <div class="row">
+    <div class="col-md">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam posuere consectetur mi, non luctus justo porttitor id. Vivamus dignissim, tortor nec fermentum finibus, augue lorem euismod nisi, non lacinia libero sapien vel massa.</p>
+      <p> Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Ut accumsan, justo eget tincidunt accumsan, urna quam ullamcorper nibh, imperdiet blandit tortor libero accumsan leo. Nullam feugiat leo non tortor pretium, eleifend varius arcu tempus.</p>
+    </div>
+    <div class="col-md">
+      <p>Donec euismod, nunc in sagittis consectetur, enim est pellentesque nisl, in imperdiet libero tellus et ante. Vivamus pretium lobortis interdum. Vivamus fringilla urna eu lacus faucibus, eget mattis massa facilisis. Pellentesque sit amet consequat nulla. Donec ornare congue ligula sed accumsan. Suspendisse potenti. Phasellus eu ex quam.</p>
+      <p>Vestibulum fermentum orci orci, vitae dignissim sem iaculis et. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam id euismod tortor.</p>
+    </div>
+  </div>
+
+  <!-- CITIES CARDS -->
+  <div class="row">
+    <div class="col-lg">
+      <h2>Focus cities</h2>
+      <p>Our research is led by collaborations of local experts and practitioners based in four rapidly developing and multi-hazard exposed cities, and is supported by an international network of specialists.</p>
+
+      <div class="grid clearfix">
+      <!--  from datafile file  eg <i class="fas fa-external-link-alt"></i>  -->
+      {% for city in site.data.cities %}
+      <div class="card" >
+        <img src="{{ city.Image }}" class="card-img-top" alt="cityscape">
+        <div class="card-body">
+          <h5 class="card-title">{{ city.Title }}</h5>
+          <p class="card-text">{{ city.Blurb }}</p>
+          <a href="{{ city.Link }}" class="btn btn-primary">Details <i class="fas fa-caret-right"></i></a>
+        </div>
+      </div>
+      {% endfor %}
+
+      </div> <!-- end grid -->
+    </div>
+  </div>
+
+
+
+</div> <!-- end container -->
