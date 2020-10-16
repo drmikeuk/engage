@@ -1,17 +1,19 @@
 ---
 layout: blank
-title: "Cities"
+title: "Nottingham"
 ---
 <style>
 body            {background: #f2f2f2}
 footer          {background: #c3c3c3; padding: 50px 0}
+.prefooter      {background: #CCC}
 
 
-.header         {background: url(city.jpg) no-repeat center center;  background-size: cover; min-height: 500px; padding-top: 20px; border-bottom: 0; margin-bottom: 30px}
+.header         {background: url(nottingham.jpg) no-repeat center center;  background-size: cover; min-height: 500px; padding-top: 20px; border-bottom: 0; margin-bottom: 30px}
 .header .title  {width: 50%; color: white; /*background: rgba(204, 204, 204, 0.8);*/ padding: 10px; }
 .title p        {margin-botton: 0}
 
 h2              {margin-top: 30px}
+.intro          {font-size: 120%}
 
 /* cards */
 .city           {min-height: 380px}
@@ -32,8 +34,8 @@ footer img            {max-width: 100%}
 <div class="header">
   <div class="container">
     <div class="title">
-      <h1>Global Cities Free of Slavery</h1>
-      <p class="hidden-xs">A global network focussed on building community resilience against modern slavery and human trafficking.</p>
+      <h1>Nottingham</h1>
+      <p class="hidden-xs">United Kingdom</p>
     </div>
   </div>
 </div>
@@ -44,56 +46,20 @@ footer img            {max-width: 100%}
 
   <!-- RESEARCH INTRO -->
   <div class="row">
-    <div class="col-md">
-      <p>Modern Slavery is a sustainable development issue for cities and communities, which can impact upon multiple aspects of human flourishing including economic prosperity, health and wellbeing, education, climate action, decent work, and peace and justice.</p>
-      <p>The significance of modern slavery as an international challenge is recognised in the UN’s Sustainable Development target 8.7; to take immediate and effective measures to eradicate forced labour, end modern slavery and human trafficking and eliminate the worst forms of child labour by 2030.</p>
+    <div class="col-md-9 intro">
+      <p>Nottingham in the UK is developing a multi-agency approach towards increasing resilience against modern slavery and human trafficking.  Multiple partners from statutory, private and voluntary sectors share the objective of making Nottingham and its surrounding County ‘slavery-free’.</p>
+      <p>At the University of Nottingham’s Rights Lab we are supporting this aspiration by undertaking research to strengthen partnership working, clarify the nature and extent of exploitation in Nottinghamshire, and develop understanding of the factors that underpin anti-slavery resilience.</p>
+      <p><b>Key areas of interest:</b><br/>
+        Tackling criminal exploitation, addressing labour exploitation, developing slavery-free communities</p>
+
+      <p><b>Hopes for the project:</b><br/>
+          To better understand the factors that underpin resilience against modern slavery in different contexts.  To learn how other cities approach common challenges.</p>
+
     </div>
-    <div class="col-md">
-      <p>This project is the first building block for a global slavery-free cities network, which can develop, scale and share sustainable approaches to achieving resilience against slavery.</p>
-      <p>Using a two-year programme of knowledge-exchange we hope to accelerate and improve the development of place-based anti-slavery initiatives, by creating a structured dialogue on city-based anti-slavery action in diverse international contexts. Our network is funded by UK Research and Innovation via the Global Challenges Research Fund. </p>
+    <div class="col-md-3">
+      <p>map..</p>
     </div>
   </div>
-
-
-
-  <!-- CITIES CARDS -->
-  <div class="row">
-    <div class="col-lg">
-      <h2>Focus cities</h2>
-      <p>We have four founding cities within our network, and we hope other partner cities will join us over time.</p>
-    </div>
-  </div> <!-- end row -->
-
-  <div class="row">
-    <!--  from datafile file  eg <i class="fas fa-external-link-alt"></i>  -->
-    {% for city in site.data.cities %}
-    <div class="col-lg-3 col-md-6 col-sm-12 pb-4" >
-      <div class="card city" >
-        <img src="{{ city.Image }}" class="card-img-top" alt="cityscape">
-        <div class="card-body">
-          <h5 class="card-title">{{ city.Title }}</h5>
-          <p class="card-text">{{ city.Blurb }}</p>
-        </div>
-        <div class="card-footer">
-          <a href="{{ city.Link }}" class="btn btn-primary">Project details <i class="fas fa-caret-right"></i></a>
-        </div>
-      </div>
-    </div>  <!-- end col -->
-    {% endfor %}
-  </div>  <!-- end row -->
-
-
-
-  <!-- REPORTS CARDS -->
-  <div class="row">
-    <div class="col-lg">
-      <h2>Reports</h2>
-      <p style="height: 300px"> video... pdf...</p>
-    </div>
-  </div> <!-- end row -->
-
-
-
 
 
 
@@ -106,7 +72,8 @@ footer img            {max-width: 100%}
 
   <div class="row">
     <!--  from datafile file   -->
-    {% for person in site.data.people %}
+    {% assign people = (site.data.people | where: "City", "Nottingham" ) %}
+    {% for person in people %}
     <div class="col-lg-3 col-md-6 col-sm-12 pb-4" >
       <div class="card person" >
         <img src="{{ person.Image }}" class="rounded-circle" alt="photo">
@@ -126,9 +93,7 @@ footer img            {max-width: 100%}
   <div class="row">
     <div class="col-lg">
       <h2>Partners</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam posuere consectetur mi, non luctus justo porttitor id. Vivamus dignissim, tortor nec fermentum finibus</p>
-
-      <p style="height: 300px">...</p>
+      <p style="height: 300px">partner logos ...</p>
 
     </div>
   </div> <!-- end row -->
@@ -149,10 +114,40 @@ footer img            {max-width: 100%}
     {% endfor %}
   </div>  <!-- end row -->
 
-
-
-
 </div> <!-- end container -->
+
+
+
+
+<div class="prefooter">
+  <div class="container">
+    <!-- CITIES CARDS -->
+    <div class="row">
+      <div class="col-lg">
+        <h2>Focus cities</h2>
+        <p>We have four founding cities within our network, and we hope other partner cities will join us over time.</p>
+      </div>
+    </div> <!-- end row -->
+
+    <div class="row">
+      <!--  from datafile file  eg <i class="fas fa-external-link-alt"></i>  -->
+      {% for city in site.data.cities %}
+      <div class="col-lg-3 col-md-6 col-sm-12 pb-4" >
+        <div class="card city" >
+          <img src="{{ city.Image }}" class="card-img-top" alt="cityscape">
+          <div class="card-body">
+            <h5 class="card-title">{{ city.Title }}</h5>
+            <p class="card-text">{{ city.Blurb }}</p>
+          </div>
+          <div class="card-footer">
+            <a href="{{ city.Link }}" class="btn btn-primary">Project details <i class="fas fa-caret-right"></i></a>
+          </div>
+        </div>
+      </div>  <!-- end col -->
+      {% endfor %}
+    </div>  <!-- end row -->
+  </div>
+</div>
 
 
 
