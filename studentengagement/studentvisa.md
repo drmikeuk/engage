@@ -18,9 +18,15 @@ table i         {font-size: 20px; padding-left: 0.5em}
 .flag           {height: 24px; width: 24px; vertical-align: middle;  margin-right: 0.5em}
 .fa-globe       {font-size: 24px; color: #1D8348; margin-right: 0.5em; padding-left: 0}
 .fa-chevron-circle-right {color: #007bff}
+.fa-passport    {color:  #ccc; padding-left: 0}
 
 .flagBar    {background: #d80f2a; width: 100%; color: white; padding: 2px 4px;}
 .warnBar    {background: #f8c400; width: 100%; padding: 2px 4px;}
+.okBar      {background: rgba(0, 155, 189, 0.4); padding: 2px 4px;}
+
+/* Yellow-eyed penguin & opaque uon blue */
+.flagBar    {background: #D04E59; width: 100%; color: white; padding: 2px 4px;}
+.warnBar    {background: #FAE093; width: 100%; padding: 2px 4px;}
 .okBar      {background: rgba(0, 155, 189, 0.4); padding: 2px 4px;}
 
 div.dataTables_wrapper div.dataTables_filter { text-align: left; }
@@ -35,6 +41,7 @@ div.dataTables_wrapper div.dataTables_filter { text-align: left; }
 .form-inline input            {margin-right: 2em}
 .form-inline .btn-group       {margin-right: 2em}
 .form-inline .custom-switch   {margin-right: 1em}
+label i                       {padding-right: 0.25em}
 </style>
 
 
@@ -68,12 +75,12 @@ div.dataTables_wrapper div.dataTables_filter { text-align: left; }
 
       <div class="custom-control custom-switch">
         <input type="checkbox" class="custom-control-input" id="Studentvisa" checked>
-        <label class="custom-control-label" for="Studentvisa">Student visa</label>
+        <label class="custom-control-label" for="Studentvisa"><i class="fas fa-passport"></i> Student visa </label>
       </div>
 
       <div class="custom-control custom-switch">
         <input type="checkbox" class="custom-control-input" id="Active" checked>
-        <label class="custom-control-label" for="Active">Active</label>
+        <label class="custom-control-label" for="Active">Active students</label>
       </div>
 
   </form>
@@ -143,7 +150,11 @@ div.dataTables_wrapper div.dataTables_filter { text-align: left; }
           {% elsif student.FeeStatus == "int" %}     
             <i class="fas fa-globe"></i>
           {% endif %}
-            {{ student.Tier4 }}
+
+          {% if student.Tier4 %}     
+              <i class="fas fa-passport"></i>
+          {% endif %}
+
             {{ student.RemoteStudy }}</td>
         <!-- <td><i class="fas fa-chevron-circle-right"></i></td> -->
       </tr>
@@ -152,6 +163,7 @@ div.dataTables_wrapper div.dataTables_filter { text-align: left; }
       </tbody>
     </table>
 
+<hr/>
 <p>NB. Email & phone number columns are hidden but will be exported</p>
 
 </div>
