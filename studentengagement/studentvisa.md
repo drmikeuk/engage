@@ -60,16 +60,19 @@ label i                       {padding-right: 0.25em}
           <input type="radio" name="options" id="All" autocomplete="off" checked> All
         </label>
         <label class="btn btn-outline-primary">
-          <input type="radio" name="options" id="0-7" autocomplete="off"> &lt; 7
+          <input type="radio" name="options" id="1-7" autocomplete="off"> &gt; 1
         </label>
         <label class="btn btn-outline-primary">
-          <input type="radio" name="options" id="8-14" autocomplete="off"> &lt; 14
+          <input type="radio" name="options" id="8-14" autocomplete="off"> &gt; 7
         </label>
         <label class="btn btn-outline-primary">
-          <input type="radio" name="options" id="15-21" autocomplete="off"> &lt; 21
+          <input type="radio" name="options" id="15-21" autocomplete="off"> &gt; 14
         </label>
         <label class="btn btn-outline-primary">
-          <input type="radio" name="options" id="22-30" autocomplete="off"> &lt; 30
+          <input type="radio" name="options" id="22-30" autocomplete="off"> &gt; 21
+        </label>
+        <label class="btn btn-outline-primary">
+          <input type="radio" name="options" id=">30" autocomplete="off"> &gt; 30
         </label>
       </div>
 
@@ -82,6 +85,15 @@ label i                       {padding-right: 0.25em}
         <input type="checkbox" class="custom-control-input" id="Active" checked>
         <label class="custom-control-label" for="Active">Active students</label>
       </div>
+
+
+
+<button class="btn btn-primary" id="filterActive">active</button>
+
+<button class="btn btn-secondary" id="filterNotActive">not active</button>
+
+<button class="btn btn-primary" id="filterVisa">visa</button>
+
 
   </form>
 
@@ -103,6 +115,8 @@ label i                       {padding-right: 0.25em}
         <th scope="col">Yr</th>
         <th scope="col">Course</th>
         <th scope="col">Status</th>
+        <th scope="col">Active</th>
+        <th scope="col">Visa</th>
         <!-- <th scope="col"></th>  -->
       </tr>
     </thead>
@@ -116,7 +130,7 @@ label i                       {padding-right: 0.25em}
           (Resits)
         {% endif %}
         {% if student.Repeating %}
-          <(Repeating)
+          (Repeating)
         {% endif %}
         {% if student.Interupted %}
           (Interupted)
@@ -156,6 +170,30 @@ label i                       {padding-right: 0.25em}
           {% endif %}
 
             {{ student.RemoteStudy }}</td>
+
+        <!-- hidden col for filters: active -->
+        <td>
+        {% if student.Resits %}
+          no
+        {% elsif student.Repeating %}
+          no
+        {% elsif student.Interupted %}
+          no
+        {% elsif student.Withdrawn %}
+          no
+        {% else %}
+          active
+        {% endif %}
+
+        </td>
+
+        <!-- hidden col for filters: visa -->
+        <td>
+          {% if student.Tier4 %}     
+              visa
+          {% endif %}
+        </td>            
+
         <!-- <td><i class="fas fa-chevron-circle-right"></i></td> -->
       </tr>
 {% endfor %}
