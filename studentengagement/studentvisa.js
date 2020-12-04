@@ -2,51 +2,47 @@ $(document).ready( function () {
     //console.log("init DataTable");
     $('#DataTable').DataTable({
         "pageLength": 25,
-        "order": [[ 1, 'des' ], [ 0, 'asc' ]],
-        "dom": '<"filters"f><"controls"ip>t<"controlsbottom"ip>',                /* ie display filter, table, info, pagination */
-        "language": {
-            search: 'Filter'
-          }
+        "order": [[ 3, 'des' ], [ 2, 'asc' ]],
+        "dom": '<"filters"f><"controls"ip>t<"controlsbottom"ip>',   /* ie display filter, table, info, pagination */
+        "language": { search: 'Filter' },
+        "columnDefs": [ { "targets": [ 0,  1 ],  "visible": false  }]
       });
 
       // initial filter; active + visa
       $('#DataTable').DataTable()
-          .column( 7 ).search( 'active' )
-          .column( 8 ).search( 'visa' )
+          .column( 0 ).search( 'active' )
+          .column( 1 ).search( 'visa' )
           .draw();
 
 
-      // add search action to the filterActive button
-      //onclick="dataTable.column(7).search('active').draw();"
+      // add search action to the Studentvisa toggle   .column( 1 ).search( 'visa' ) / dash
+      $('#StudentVisaToggle').on( 'click', function () {
+          //console.log ("toggle for visa");
+          if ($(this).is(":checked")) {
+            //console.log ("  toggle changed to ACTIVE -> filter for visa");
+            $('#DataTable').DataTable().column( 1 ).search( 'visa' ).draw();
+          } else {
+            //console.log ("  toggle changed to INACTIVE -> filter for dash");
+            $('#DataTable').DataTable().column( 1 ).search( '-' ).draw();
+          }
 
-      $('#filterActive').on( 'click', function () {
-          console.log ("filter for active");
-          $('#DataTable').DataTable()
-              .column( 7 )
-              .search( 'active' )
-              .draw();
-          return false; // ie stop submission
-      } );
-
-      $('#filterNotActive').on( 'click', function () {
-          console.log ("filter for not active");
-          $('#DataTable').DataTable()
-              .column( 7 )
-              .search( 'no' )
-              .draw();
-          return false; // ie stop submission
       } );
 
 
-      // add search action to the filterVisa button
-      //onclick="dataTable.column(8).search('visa').draw();"
-      $('#filterVisa').on( 'click', function () {
-          console.log ("filter for visa");
-          $('#DataTable').DataTable()
-              .column( 8 )
-              .search( 'visa' )
-              .draw();
-          return false; // ie stop submission
+      // add search action to the ActiveToggle toggle   .column( 0 ).search( 'active' ) / no
+      $('#ActiveToggle').on( 'click', function () {
+          //console.log ("toggle for active");
+          if ($(this).is(":checked")) {
+            //console.log ("  toggle changed to ACTIVE -> filter for ACTIVE");
+            $('#DataTable').DataTable().column( 0 ).search( 'active' ).draw();
+          } else {
+            //console.log ("  toggle changed to INACTIVE -> filter for NO");
+            $('#DataTable').DataTable().column( 0 ).search( 'no' ).draw();
+          }
+
       } );
+
+
+
 
 } );

@@ -77,13 +77,13 @@ label i                       {padding-right: 0.25em}
       </div>
 
       <div class="custom-control custom-switch">
-        <input type="checkbox" class="custom-control-input" id="Studentvisa" checked>
-        <label class="custom-control-label" for="Studentvisa"><i class="fas fa-passport"></i> Student visa </label>
+        <input type="checkbox" class="custom-control-input" id="StudentVisaToggle" checked>
+        <label class="custom-control-label" for="StudentVisaToggle">Student visa </label>
       </div>
 
       <div class="custom-control custom-switch">
-        <input type="checkbox" class="custom-control-input" id="Active" checked>
-        <label class="custom-control-label" for="Active">Active students</label>
+        <input type="checkbox" class="custom-control-input" id="ActiveToggle" checked>
+        <label class="custom-control-label" for="ActiveToggle">Active students</label>
       </div>
 
 
@@ -105,18 +105,17 @@ label i                       {padding-right: 0.25em}
   <table class="table table-hover table-sm" id="DataTable" >
     <thead class="thead-dark">
       <tr>
+      <!-- first 2 are hidden; just for filters -->
+       <th scope="col">Active</th>
+       <th scope="col">Visa</th>
         <th scope="col">Name</th>
         <th scope="col" >Last activity</th>
         <th scope="col">EMPLID</th>
-
-        <!--<th style="width: 6em"> </th> -->
         <!--<th scope="col">Engage</th>   -->
         <th scope="col">School</th>
         <th scope="col">Yr</th>
         <th scope="col">Course</th>
         <th scope="col">Status</th>
-        <th scope="col">Active</th>
-        <th scope="col">Visa</th>
         <!-- <th scope="col"></th>  -->
       </tr>
     </thead>
@@ -124,32 +123,53 @@ label i                       {padding-right: 0.25em}
 
 {% for student in site.data.dummyTier4 %}
       <tr>
-        <td class="nowrap"><a href=''>{{ student.FirstName }} {{ student.LastName }}</a>
+        <!-- hidden col for filters: active -->
+        <td>
+            {% if student.Resits %}
+              no
+            {% elsif student.Repeating %}
+              no
+            {% elsif student.Interupted %}
+              no
+            {% elsif student.Withdrawn %}
+              no
+            {% else %}
+              active
+            {% endif %}
+        </td>
+        <!-- hidden col for filters: visa -->
+        <td>
+            {% if student.Tier4 %}     
+                visa
+            {% else %}
+                -               
+            {% endif %}
+        </td>         
 
-        {% if student.Resits %}
-          (Resits)
-        {% endif %}
-        {% if student.Repeating %}
-          (Repeating)
-        {% endif %}
-        {% if student.Interupted %}
-          (Interupted)
-        {% endif %}
-        {% if student.Withdrawn %}
-          (Withdrawn)
-        {% endif %}                
+        <td class="nowrap"><a href=''>{{ student.FirstName }} {{ student.LastName }}</a>
+            {% if student.Resits %}
+              (Resits)
+            {% endif %}
+            {% if student.Repeating %}
+              (Repeating)
+            {% endif %}
+            {% if student.Interupted %}
+              (Interupted)
+            {% endif %}
+            {% if student.Withdrawn %}
+              (Withdrawn)
+            {% endif %}                
         </td>
 
         <td class="nowrap">
-        {% assign days = student.DaysSinceLastActivity | divided_by: 13.0 %}
-        {% if days > 2.3 %}
-            <div class="flagBar">{{ student.DaysSinceLastActivity }}</div>
-        {% elsif days > 1.0 %}
-            <div class="warnBar">{{ student.DaysSinceLastActivity }}</div>
-        {% else %}
-          <div class="okBar" style="width: {{ days| times: 100 }}%">{{ student.DaysSinceLastActivity }}</div>
-        {% endif %}
-
+            {% assign days = student.DaysSinceLastActivity | divided_by: 13.0 %}
+            {% if days > 2.3 %}
+                <div class="flagBar">{{ student.DaysSinceLastActivity }}</div>
+            {% elsif days > 1.0 %}
+                <div class="warnBar">{{ student.DaysSinceLastActivity }}</div>
+            {% else %}
+              <div class="okBar" style="width: {{ days| times: 100 }}%">{{ student.DaysSinceLastActivity }}</div>
+            {% endif %}
         </td>
         <td>{{ student.EMPLID }}</td>
         <!--<td>{{ student.Engagement }}</td>-->
@@ -157,42 +177,20 @@ label i                       {padding-right: 0.25em}
         <td>{{ student.Year }}</td>
         <td>{{ student.Course }}</td>
         <td>
-          {%if student.FeeStatus == "home"%}
-            <img class="flag" src="uk.png"/>
-          {% elsif student.FeeStatus == "eu" %}
-            <img class="flag" src="eu.png"/>
-          {% elsif student.FeeStatus == "int" %}     
-            <i class="fas fa-globe"></i>
-          {% endif %}
+            {%if student.FeeStatus == "home"%}
+              <img class="flag" src="uk.png"/>
+            {% elsif student.FeeStatus == "eu" %}
+              <img class="flag" src="eu.png"/>
+            {% elsif student.FeeStatus == "int" %}     
+              <i class="fas fa-globe"></i>
+            {% endif %}
 
-          {% if student.Tier4 %}     
-              <i class="fas fa-passport"></i>
-          {% endif %}
+            {% if student.Tier4 %}     
+                <i class="fas fa-passport"></i>
+            {% endif %}
 
-            {{ student.RemoteStudy }}</td>
-
-        <!-- hidden col for filters: active -->
-        <td>
-        {% if student.Resits %}
-          no
-        {% elsif student.Repeating %}
-          no
-        {% elsif student.Interupted %}
-          no
-        {% elsif student.Withdrawn %}
-          no
-        {% else %}
-          active
-        {% endif %}
-
-        </td>
-
-        <!-- hidden col for filters: visa -->
-        <td>
-          {% if student.Tier4 %}     
-              visa
-          {% endif %}
-        </td>            
+            {{ student.RemoteStudy }}
+        </td>   
 
         <!-- <td><i class="fas fa-chevron-circle-right"></i></td> -->
       </tr>
