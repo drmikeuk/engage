@@ -86,15 +86,6 @@ label i                       {padding-right: 0.25em}
         <label class="custom-control-label" for="ActiveToggle">Active students</label>
       </div>
 
-
-
-<button class="btn btn-primary" id="filterActive">active</button>
-
-<button class="btn btn-secondary" id="filterNotActive">not active</button>
-
-<button class="btn btn-primary" id="filterVisa">visa</button>
-
-
   </form>
 
 
