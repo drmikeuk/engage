@@ -33,7 +33,7 @@ div.dataTables_wrapper div.dataTables_filter { text-align: left; }
         <th scope="col">Name</th>
         <th scope="col" >No activity</th>
         <!--<th style="width: 6em"> </th> -->
-        <th scope="col">Engage</th>
+        <!--<th scope="col">Engage</th>-->
         <th scope="col">Yr</th>
         <th scope="col">Course</th>        
         <th scope="col">Status</th>
@@ -53,7 +53,7 @@ div.dataTables_wrapper div.dataTables_filter { text-align: left; }
           <div class="okBar" style="width: {{ days| times: 100 }}%">{{ student.DaysSinceLastActivity }}</div>
         {% endif %}
         </td>
-        <td>{{ student.Engagement }}</td>
+        <!--<td>{{ student.Engagement }}</td>-->
         <td>{{ student.Year }}</td>
         <td>{{ student.Course }}</td>
         <td>

@@ -1,6 +1,6 @@
 ---
 layout: blank
-title: "Tutees3"
+title: "Course"
 customjs:
   - datatables.min.js
   - tutees.js
@@ -25,24 +25,23 @@ div.dataTables_wrapper div.dataTables_filter { text-align: left; }
 
 
 <div class="container">
-  <h1>Tutees v3</h1>
+  <h1>Course v3</h1>
 
-  <table class="table table-hover table-sm" id="DataTable">
+  <table class="table table-hover table-sm" id="DataTable" style="width:50%">
     <thead class="thead-dark">
       <tr>
         <th scope="col">Name</th>
-        <th scope="col" >No activity</th>
+        <th scope="col" >Last activity</th>
         <!--<th style="width: 6em"> </th> -->
-        <th scope="col">Engage</th>
+        <th scope="col">Engage</th>    
         <th scope="col">Yr</th>
-        <th scope="col">Course</th>        
         <th scope="col">Status</th>
         <!-- <th scope="col"></th>  -->
       </tr>
     </thead>
     <tbody>
 
-{% for student in site.data.dummyTutees %}
+{% for student in site.data.dummyCourse %}
       <tr>
         <td class="nowrap"><a href=''>{{ student.FirstName }} {{ student.LastName }}</a></td>
         <td class="nowrap">
@@ -55,7 +54,6 @@ div.dataTables_wrapper div.dataTables_filter { text-align: left; }
         </td>
         <td>{{ student.Engagement }}</td>
         <td>{{ student.Year }}</td>
-        <td>{{ student.Course }}</td>
         <td>
           {%if student.FeeStatus == "home"%}
             <img class="flag" src="uk.png"/>

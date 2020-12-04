@@ -10,7 +10,7 @@ title: "Tutees"
 <div class="container">
   <h1>Tutees</h1>
 
-  <table class="table  table-hover">
+  <table class="table  table-hover  table-sm">
     <thead class="thead-dark">
       <tr>
         <th scope="col">Name</th>

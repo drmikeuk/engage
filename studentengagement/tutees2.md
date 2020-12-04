@@ -27,7 +27,7 @@ div.dataTables_wrapper div.dataTables_filter { text-align: left; }
 <div class="container">
   <h1>Tutees v2</h1>
 
-  <table class="table table-hover" id="DataTable">
+  <table class="table table-hover table-sm" id="DataTable">
     <thead class="thead-dark">
       <tr>
         <th scope="col">Name</th>
