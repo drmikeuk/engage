@@ -10,7 +10,7 @@ customjs:
 
 <style>
 body            {font-size: 90%}
-h1              {padding-bottom: 15spx}
+h1              {padding-bottom: 20px}
 .nowrap         {white-space: nowrap;}
 
 table i         {font-size: 20px; padding-left: 0.5em}
