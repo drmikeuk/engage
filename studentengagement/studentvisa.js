@@ -8,7 +8,7 @@ $(document).ready( function () {
         "columnDefs": [ { "targets": [ 0,  1 ],  "visible": false  }]
       });
 
-      // initial filter; active + visa
+      // initial filter = active + visa
       $('#DataTable').DataTable()
           .column( 0 ).search( 'active' )
           .column( 1 ).search( 'visa' )
@@ -42,7 +42,6 @@ $(document).ready( function () {
 
 
       // add search action to new, custom, search box
-      var table = $('#example').dataTable().api();
       $('#Filter').on('keyup change', function () {
           $('#DataTable').DataTable().search(this.value).draw();
       });
@@ -50,7 +49,19 @@ $(document).ready( function () {
 
       // add search action to days filters
       // btngroup = #daysfilters; input ids = range (eg '1-7') or 'All'
+      $('#daysfilters').on('click', 'label', function() {
+        range = $(this).attr('for');        // eg 1-7
+        if (range != "All"){
+          parts = range.split("-");
+          min = parts[0];
+          max = parts[1];
 
+          console.log ("Days filter " + min + " to " + max);     
+        }
+        else {
+          console.log ("Days filter reset (ie all)");
+        }
+      });
 
 
 } );

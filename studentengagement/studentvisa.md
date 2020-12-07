@@ -56,22 +56,22 @@ label i                       {padding-right: 0.25em}
 
       <label for="daysfilters">Last activity</label>
       <div class="btn-group btn-group-toggle" id="daysfilters" data-toggle="buttons">
-        <label class="btn btn-outline-primary active">
+        <label class="btn btn-outline-primary active" for="All">
           <input type="radio" name="options" id="All" autocomplete="off" checked> All
         </label>
-        <label class="btn btn-outline-primary">
-          <input type="radio" name="options" id="1-7" autocomplete="off"> &gt; 1
+        <label class="btn btn-outline-primary" for="0-7">
+          <input type="radio" name="options" id="0-7" autocomplete="off"> &gt; 1
         </label>
-        <label class="btn btn-outline-primary">
+        <label class="btn btn-outline-primary" for="8-14">
           <input type="radio" name="options" id="8-14" autocomplete="off"> &gt; 7
         </label>
-        <label class="btn btn-outline-primary">
+        <label class="btn btn-outline-primary" for="15-21">
           <input type="radio" name="options" id="15-21" autocomplete="off"> &gt; 14
         </label>
-        <label class="btn btn-outline-primary">
+        <label class="btn btn-outline-primary" for="22-30">
           <input type="radio" name="options" id="22-30" autocomplete="off"> &gt; 21
         </label>
-        <label class="btn btn-outline-primary">
+        <label class="btn btn-outline-primary" for=">30">
           <input type="radio" name="options" id=">30" autocomplete="off"> &gt; 30
         </label>
       </div>
