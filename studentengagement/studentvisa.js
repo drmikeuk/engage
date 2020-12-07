@@ -25,7 +25,6 @@ $(document).ready( function () {
             //console.log ("  toggle changed to INACTIVE -> filter for dash");
             $('#DataTable').DataTable().column( 1 ).search( '-' ).draw();
           }
-
       } );
 
 
@@ -39,9 +38,18 @@ $(document).ready( function () {
             //console.log ("  toggle changed to INACTIVE -> filter for NO");
             $('#DataTable').DataTable().column( 0 ).search( 'no' ).draw();
           }
-
       } );
 
+
+      // add search action to new, custom, search box
+      var table = $('#example').dataTable().api();
+      $('#Filter').on('keyup change', function () {
+          $('#DataTable').DataTable().search(this.value).draw();
+      });
+
+
+      // add search action to days filters
+      // btngroup = #daysfilters; input ids = range (eg '1-7') or 'All'
 
 
 
