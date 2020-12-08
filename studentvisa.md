@@ -13,7 +13,7 @@ customjs:
 
 <style>
 
-table i         {font-size: 20px; padding-left: 0.5em}
+table i         {font-size: 20px; }
 
 
 
