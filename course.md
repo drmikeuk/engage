@@ -31,7 +31,7 @@ customjs:
 
     {% for student in site.data.dummyCourse %}
           <tr>
-            <td class="nowrap"><a href=''>{{ student.FirstName }} {{ student.LastName }}</a></td>
+            <td class="nowrap"><a href='student.html'>{{ student.FirstName }} {{ student.LastName }}</a></td>
             <td class="nowrap">
             {% assign days = student.DaysSinceLastActivity | divided_by: 13.0 %}
             {% if  days > 1.0 %}
@@ -44,14 +44,20 @@ customjs:
             <td>{{ student.Year }}</td>
             <td>
               {%if student.FeeStatus == "home"%}
-                <img class="flag" src="images/uk.png"/>
+                <div class="qtip tip-top" data-tip="UK fee status">
+                  <img class="flag tip" src="images/uk.png" alt="UK fee status"/>
+                </div>
               {% elsif student.FeeStatus == "eu" %}
-                <img class="flag" src="images/eu.png"/>
-              {% elsif student.FeeStatus == "int" %}     
-                <i class="fas fa-globe"></i>
+                <div class="qtip tip-top" data-tip="EU fee status">
+                  <img class="flag tip" src="images/eu.png" alt="EU fee status"/>
+                </div>
+              {% elsif student.FeeStatus == "int" %}
+                <div class="qtip tip-top" data-tip="International fee status">     
+                  <i class="fas fa-globe flag tip"></i>
+                </div>
               {% endif %}
-                {{ student.Tier4 }}
-                {{ student.RemoteStudy }}</td>
+              {{ student.Tier4 }}
+              {{ student.RemoteStudy }}</td>
             <!-- <td><i class="fas fa-chevron-circle-right"></i></td> -->
           </tr>
     {% endfor %}

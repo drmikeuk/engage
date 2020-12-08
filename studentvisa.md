@@ -130,7 +130,7 @@ label i                       {padding-right: 0.25em}
             {% endif %}
         </td>         
 
-        <td class="nowrap"><a href=''>{{ student.FirstName }} {{ student.LastName }}</a>
+        <td class="nowrap"><a href='student.html'>{{ student.FirstName }} {{ student.LastName }}</a>
             {% if student.Resits %}
               (Resits)
             {% endif %}
@@ -163,16 +163,24 @@ label i                       {padding-right: 0.25em}
         <td>{{ student.Year }}</td>
         <td>{{ student.Course }}</td>
         <td>
-            {%if student.FeeStatus == "home"%}
-              <img class="flag" src="images/uk.png"/>
-            {% elsif student.FeeStatus == "eu" %}
-              <img class="flag" src="images/eu.png"/>
-            {% elsif student.FeeStatus == "int" %}     
-              <i class="fas fa-globe"></i>
-            {% endif %}
+        {%if student.FeeStatus == "home"%}
+          <div class="qtip tip-top" data-tip="UK fee status">
+            <img class="flag tip" src="images/uk.png" alt="UK fee status"/>
+          </div>
+        {% elsif student.FeeStatus == "eu" %}
+          <div class="qtip tip-top" data-tip="EU fee status">
+            <img class="flag tip" src="images/eu.png" alt="EU fee status"/>
+          </div>
+        {% elsif student.FeeStatus == "int" %}
+          <div class="qtip tip-top" data-tip="International fee status">     
+            <i class="fas fa-globe flag tip"></i>
+          </div>
+        {% endif %}
 
-            {% if student.Tier4 %}     
+            {% if student.Tier4 %}   
+              <div class="qtip tip-top" data-tip="Student visa">  
                 <i class="fas fa-passport"></i>
+              </div>  
             {% endif %}
 
             {{ student.RemoteStudy }}

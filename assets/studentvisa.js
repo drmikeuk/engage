@@ -8,6 +8,7 @@ $(document).ready( function () {
         "language": { search: 'Filter' },
         "columnDefs": [ { "targets": [ 0, 1, 5 , 6],  "visible": false  }]
       });
+      
 
       // initial filter = active + visa
       $('#DataTable').DataTable()
