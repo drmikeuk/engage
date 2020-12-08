@@ -1,6 +1,43 @@
 /* my styles */
-.header {background: #eee; border-bottom: 5px solid #ddd}
-.footer {background: #efefef; padding: 3em 0 2em;   margin-top: 2em}
+.header {background: #eee; padding: 0.5rem 0 0.2rem}
+.footer {background: #efefef; padding: 3em 0 2em; margin-top: 2em}
+
+/* header */
+.header h1      {font-size: 1.5rem}
+.navbar         {padding: 0}
+.main           {margin-top: 20px}
+
+/* main */
+body            {font-size: 90%}
+.nowrap         {white-space: nowrap;}
+.main h1        {padding-bottom: 20px}
+
+
+/* controls */
+#DataTable_filter { text-align: left; }
+
+/* table */
+.flag           {height: 24px; width: 24px; vertical-align: middle;  margin-right: 0.5em}
+.fa-globe       {font-size: 24px; color: #1D8348; margin-right: 0.5em}
+.fa-passport    {color:  #ccc; padding-left: 0}
+.fa-chevron-circle-right {color: #007bff}
+
+
+/* warning bars */
+.flagBar    {background: #d80f2a; width: 100%; color: white; padding: 2px 4px;}
+.warnBar    {background: #f8c400; width: 100%; padding: 2px 4px;}
+.okBar      {background: rgba(0, 155, 189, 0.4); padding: 2px 4px;}
+
+/* Yellow-eyed penguin & opaque uon blue */
+.flagBar    {background: #D04E59; width: 100%; color: white; padding: 2px 4px;}
+.warnBar    {background: #FAE093; width: 100%; padding: 2px 4px;}
+.okBar      {background: rgba(0, 155, 189, 0.4); padding: 2px 4px;}
+
+
+/* other */
+.dummygraph   {margin-top: 40px; background: url(../images/dummycoursegraph.png)  no-repeat; background-size: contain}
+
+
 
 
 

@@ -7,4 +7,10 @@
   <link rel="stylesheet" href="{{ "/assets/style.css" | prepend: site.baseurl }}" media="screen" type="text/css">
   <!-- add in  icons -->
 
+{% if page.customcss %}
+  <!-- custom css -->
+  {% for stylesheet in page.customcss %}
+  <link rel="stylesheet" href="{{ stylesheet | prepend: site.baseurl }}" media="screen" type="text/css">
+  {% endfor %}
+{% endif %}
 </head>

@@ -1,7 +1,8 @@
 # Site settings
-title: "Jekyll Misc"
-baseurl: "" # the subpath of your site, e.g. /blog
+title: "Engage"
+baseurl: "/engage" # the subpath of your site, e.g. /blog
 #url: "http://yourdomain.com" # the base hostname & protocol for your site
+port: 			  4120
 
 # Build settings
 #markdown: kramdown
