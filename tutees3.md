@@ -17,9 +17,10 @@ customjs:
     <thead class="thead-dark">
       <tr>
         <th scope="col">Name</th>
-        <th scope="col" >No activity</th>
+        <th scope="col" >Last activity</th>
         <!--<th style="width: 6em"> </th> -->
         <!--<th scope="col">Engage</th>-->
+        <th scope="col">EMPLID</th>
         <th scope="col">Yr</th>
         <th scope="col">Course</th>        
         <th scope="col">Status</th>
@@ -40,6 +41,7 @@ customjs:
         {% endif %}
         </td>
         <!--<td>{{ student.Engagement }}</td>-->
+        <td>{{ student.EMPLID }}</td>
         <td>{{ student.Year }}</td>
         <td>{{ student.Course }}</td>
         <td>
