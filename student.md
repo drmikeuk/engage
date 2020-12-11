@@ -3,11 +3,9 @@ layout: default
 title: "Student"
 nav: "yes"
 sortTitle: "XStudent"
-customcss:
-  - /vendor/datatables.min.css
 customjs:
-  - /vendor/datatables.min.js
-  - /assets/tutees.js
+  - /vendor/plotly-latest.min.js
+  - /assets/boxwhisker.js
 ---
 
 <style>
@@ -26,14 +24,14 @@ customjs:
 /* lighter tile */
 .tile               {border: 2px solid #eee; background: #fff}
 .tile .title        {color: #111}
-.tile .label        {color: #eee; }
+.tile .label        {color: #707070; }
 
 
 /* GRAPH */
 
 
 /* TREND */
-.me                 {color: #1a296b }  /* blue */
+.me                 {color: #1a296b }  /* uon blue 4 */
 .cohort             {color: #ccc}  /* grey */
 .trend              {padding-left: 50px; font-size: 0.8rem; color: #333; }
 .trend i            {position: absolute; top: 0; left: 5px; }
@@ -77,7 +75,7 @@ customjs:
           <!-- TILE -->
           <div class="tile">
             <p class="title">Activity to date</p>
-            <p class="number">245</p>
+            <p class="number activityCount">475</p>
             <p class="label">total clicks</p>
           </div>
         </div>
@@ -113,7 +111,7 @@ customjs:
       <div class="row">
         <div class="col">
           <!-- CONTEXT -->
-           <div style="background: #ddd">box whisker</div>
+          <div id="boxwhisker"></div>
         </div>
       </div>
     </div>
