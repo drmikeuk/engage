@@ -1,11 +1,13 @@
-/* later grab .activityCount and draw dot */
-var activityCount = 7;
+/* later grab .activityCount from this row */
+var activityCount = 475;
+/* later grab ID from this row */
+var targetID = 'boxwhisker';
 
-/* box and whisker */
+/* box and whisker plus dot: https://stackoverflow.com/questions/45828480/is-it-possible-to-overlay-a-marker-on-top-of-a-plotly-js-box-plot */
 var data = [
   {
     // cohort: box and whisker
-    x: [1, 2, 3, 4, 4, 4, 8, 9, 10],
+    x: [475, 0, 0, 50, 200, 210, 300, 350, 380, 390, 420, 430, 440, 450, 460, 470, 472, 475, 478, 480, 482, 485, 486, 487, 490, 490, 500, 520, 550, 600, 630, 650, 700],
     type: 'box',
     marker: {
       color: 'rgb(204, 204, 204)'       // ccc grey
@@ -22,13 +24,13 @@ var data = [
   }
 ];
 
-
 var layout = {
   showlegend: false,
   yaxis: {showticklabels: false},               // hide trace label
-  xaxis: {showgrid: false},                     // hide gridlines
-  margin: {l: 5, r: 5, b: 5, t: 5, pad: 4 },    // reduce margins
-  height: 90,
+  xaxis: {showgrid: false,
+          zeroline: false, },                   // hide thick line at x=0
+  margin: {l: 5, r: 5, b: 5, t: 0, pad: 4 },    // reduce margins
+  height: 70,
   width: 260,
 
 };
@@ -37,4 +39,4 @@ var options = {
   responsive: true
 }
 
-Plotly.newPlot('boxwhisker', data, layout, options);
+Plotly.newPlot(targetID, data, layout, options);

@@ -10,7 +10,7 @@ customjs:
 
 <style>
 /* SOURCE ROW */
-.datasource         {line-height: 1.2; padding-bottom: 10px; border-bottom: 4px solid #eee}
+.datasource         {line-height: 1.2; padding-bottom: 10px; border-bottom: 4px solid #eee; }
 
 /* TITLE */
 .dataname           {font-size: 2rem; line-height: 1; margin-bottom: 1rem}
@@ -27,6 +27,9 @@ customjs:
 .tile .label        {color: #707070; }
 
 
+/* BOX WHISKER */
+.boxwhisker         {font-size: 0.8rem; margin-top: 1.5rem; color: #333}
+
 /* GRAPH */
 
 
@@ -36,11 +39,10 @@ customjs:
 .trend              {padding-left: 50px; font-size: 0.8rem; color: #333; }
 .trend i            {position: absolute; top: 0; left: 5px; }
 
-/* BOX WHISKER */
 
 
+/* TEMP .........  just to show grid  ............. */
 
-/* just to show grid */
 .outlined div       {border: 1px solid grey}
 .outlined .col-md-6 {border: 1px solid blue}
 .outlined div > div  {border: 1px dotted red}
@@ -111,7 +113,8 @@ customjs:
       <div class="row">
         <div class="col">
           <!-- CONTEXT -->
-          <div id="boxwhisker"></div>
+
+          <div class="boxwhisker" id="boxwhisker">Total activity compared to cohort:</div>
         </div>
       </div>
     </div>
