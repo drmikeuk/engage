@@ -1,6 +1,6 @@
-/* later grab .activityCount from this row */
+/* later grab .activityCount from _this row_ */
 var activityCount = 475;
-/* later grab ID from this row */
+/* later grab ID from _this row_ */
 var targetID = 'boxwhisker';
 
 /* box and whisker plus dot: https://stackoverflow.com/questions/45828480/is-it-possible-to-overlay-a-marker-on-top-of-a-plotly-js-box-plot */
@@ -19,7 +19,7 @@ var data = [
     y: ['trace 0'],                     // ie overlap
     marker: {
       color: 'rgb(27, 42, 107)',        // uon blue4
-      size: 18
+      size: 15
     }
   }
 ];
@@ -30,7 +30,7 @@ var layout = {
   xaxis: {showgrid: false,
           zeroline: false, },                   // hide thick line at x=0
   margin: {l: 5, r: 5, b: 5, t: 0, pad: 4 },    // reduce margins
-  height: 70,
+  height: 50,
   width: 260,
 
 };

@@ -6,6 +6,7 @@ sortTitle: "XStudent"
 customjs:
   - /vendor/plotly-latest.min.js
   - /assets/boxwhisker.js
+  - /assets/barchart.js
 ---
 
 <style>
@@ -31,7 +32,7 @@ customjs:
 .boxwhisker         {font-size: 0.8rem; margin-top: 1.5rem; color: #333}
 
 /* GRAPH */
-
+.barchart           {}
 
 /* TREND */
 .me                 {color: #1a296b }  /* uon blue 4 */
@@ -39,13 +40,6 @@ customjs:
 .trend              {padding-left: 50px; font-size: 0.8rem; color: #333; }
 .trend i            {position: absolute; top: 0; left: 5px; }
 
-
-
-/* TEMP .........  just to show grid  ............. */
-
-.outlined div       {border: 1px solid grey}
-.outlined .col-md-6 {border: 1px solid blue}
-.outlined div > div  {border: 1px dotted red}
 </style>
 
 <div class="container main">
@@ -53,7 +47,7 @@ customjs:
   <p style="margin-bottom: 3rem">some basic info ...</p>
 
   <!-- ROW PER DATASOURCE -->
-  <div class="row datasource outlinedXX">
+  <div class="row datasource ">
 
     <!-- LEFT -->
     <div class="col-md-3">
@@ -89,7 +83,7 @@ customjs:
     <!-- MIDDLE -->
     <div class="col-md-6">
       <!-- GRAPH -->
-      graph
+      <div class="barchart" id="barchart"></div>
     </div>
 
 
@@ -121,6 +115,6 @@ customjs:
 
    </div><!-- END DATASOURCE ROW -->
 
-<div class="dummystudent"></div>
+
 
 </div>
