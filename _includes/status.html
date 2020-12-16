@@ -1,0 +1,31 @@
+{%if student.FeeStatus == "home"%}
+  <div class="qtip tip-top" data-tip="UK fee status">
+    <img class="flag tip" src="images/uk.png" alt="UK fee status"/>
+  </div>
+{% elsif student.FeeStatus == "eu" %}
+  <div class="qtip tip-top" data-tip="EU fee status">
+    <img class="flag tip" src="images/eu.png" alt="EU fee status"/>
+  </div>
+{% elsif student.FeeStatus == "int" %}
+  <div class="qtip tip-top" data-tip="International fee status">
+    <i class="fas fa-globe flag tip"></i>
+  </div>
+{% endif %}
+
+{% if student.Tier4 %}
+  <div class="qtip tip-top" data-tip="Student visa">
+    <i class="fas fa-passport"></i>
+  </div>
+{% endif %}
+
+{% if student.RemoteStudy %}
+  <div class="qtip tip-top" data-tip="Remote Study">
+    <i class="fas fa-satellite-dish"></i>
+  </div>
+{% endif %}
+
+{% if student.PartTime %}
+  <div class="qtip tip-top" data-tip="Part Time">
+    <img class="partTime tip" src="images/partTime.png" alt="part time icon"/>
+  </div>
+{% endif %}

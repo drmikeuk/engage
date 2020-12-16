@@ -18,9 +18,12 @@ body            {font-size: 90%}
 .form-inline      {margin-bottom: 10px}
 
 /* table */
-.flag           {height: 24px; width: 24px; vertical-align: middle;  margin-right: 0.5em}
-.fa-globe       {font-size: 24px; color: #1D8348; margin-right: 0.5em}
-.fa-passport    {color:  #ccc; padding-left: 0}
+table i         {font-size: 20px; }
+.flag               {height: 24px; width: 24px; vertical-align: middle;  margin-right: 0.2em}
+.partTime           {height: 24px; width: 24px; vertical-align: middle;  margin-right: 0.2em; padding-left: 0.2em}
+.fa-globe           {font-size: 24px; color: #1D8348; vertical-align: middle;}
+.fa-passport        {color: #bbb; vertical-align: middle;}
+.fa-satellite-dish  {color: #6d6d6d; vertical-align: middle; padding-left: 0.2em }
 .fa-chevron-circle-right {color: #007bff}
 
 

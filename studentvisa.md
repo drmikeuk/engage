@@ -139,30 +139,7 @@ label i                       {padding-right: 0.25em}
         <td>{{ student.School }}</td>
         <td>{{ student.Year }}</td>
         <td>{{ student.Course }}</td>
-        <td class="nowrap">
-        {%if student.FeeStatus == "home"%}
-          <div class="qtip tip-top" data-tip="UK fee status">
-            <img class="flag tip" src="images/uk.png" alt="UK fee status"/>
-          </div>
-        {% elsif student.FeeStatus == "eu" %}
-          <div class="qtip tip-top" data-tip="EU fee status">
-            <img class="flag tip" src="images/eu.png" alt="EU fee status"/>
-          </div>
-        {% elsif student.FeeStatus == "int" %}
-          <div class="qtip tip-top" data-tip="International fee status">     
-            <i class="fas fa-globe flag tip"></i>
-          </div>
-        {% endif %}
-
-            {% if student.Tier4 %}   
-              <div class="qtip tip-top" data-tip="Student visa">  
-                <i class="fas fa-passport"></i>
-              </div>  
-            {% endif %}
-
-            {{ student.RemoteStudy }}
-        </td>   
-
+        <td class="nowrap">{% include status.html %}</td>   
         <!-- <td><i class="fas fa-chevron-circle-right"></i></td> -->
       </tr>
 {% endfor %}

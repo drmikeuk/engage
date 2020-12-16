@@ -1,8 +1,8 @@
 ---
 layout: default
-title: "Tutees"
+title: "Tutees 2"
 nav: "yes"
-sortTitle: "ATutees"
+sortTitle: "ATutees 2"
 customcss:
   - /vendor/datatables.min.css
 customjs:
@@ -11,7 +11,7 @@ customjs:
 ---
 
 <div class="container main">
-  <h1>Tutees</h1>
+  <h1>Tutees 2</h1>
 
   <table class="table table-hover table-sm" id="DataTable">
     <thead class="thead-dark">
@@ -29,7 +29,7 @@ customjs:
     </thead>
     <tbody>
 
-{% for student in site.data.dummyTutees %}
+{% for student in site.data.dummyTuteesLong %}
       <tr>
         <td class="nowrap">{% include name.html %}</td>
         <td class="nowrap">{% include daysSinceLastActivity.html %}</td>

@@ -9,12 +9,10 @@ $(document).ready( function () {
         "columnDefs": [ { "targets": [ 0, 1, 5 , 6],  "visible": false  }]
       });
 
-
       // initial filter = active
       $('#DataTable').DataTable()
           .column( 0 ).search( 'active' )
           .draw();
-
 
 
       // add search action to the ActiveToggle toggle   .column( 0 ).search( 'active' ) / no
@@ -29,13 +27,10 @@ $(document).ready( function () {
           }
       } );
 
-
       // add search action to new, custom, search box
       $('#Filter').on('keyup change', function () {
           $('#DataTable').DataTable().search(this.value).draw();
       });
-
-
 
       // add search action to days filters
       // https://datatables.net/examples/plug-ins/range_filtering.html
@@ -72,7 +67,24 @@ $(document).ready( function () {
 
         // redraw
         $('#DataTable').DataTable().draw();
-      });
+      }); // end daysfilters
 
+
+
+      // add search action to years filters
+      // btngroup = #yearfilters; input ids = All, 1, 2, 3
+      $('#yearfilters').on('click', 'label', function() {
+        year = $(this).attr('for');        // eg 1
+
+        if (year == "All") {
+          //console.log ("Reset search (all)");
+          // call search api and redraw table
+          $('#DataTable').DataTable().column(8).search('').draw();
+        } else {
+          //console.log ("Search " + year);
+          // call search api and redraw table
+          $('#DataTable').DataTable().column(8).search(year).draw();
+        }
+      });
 
 } );
