@@ -31,20 +31,13 @@ customjs:
 
 {% for student in site.data.dummyTutees %}
       <tr>
-        <td class="nowrap"><a href='student.html'>{{ student.FirstName }} {{ student.LastName }}</a></td>
-        <td class="nowrap">
-        {% assign days = student.DaysSinceLastActivity | divided_by: 13.0 %}
-        {% if  days > 1.0 %}
-          <div class="warnBar">{{ student.DaysSinceLastActivity }}</div>
-        {% else %}
-          <div class="okBar" style="width: {{ days| times: 100 }}%">{{ student.DaysSinceLastActivity }}</div>
-        {% endif %}
-        </td>
+        <td class="nowrap">{% include name.html %}</td>
+        <td class="nowrap">{% include daysSinceLastActivity.html %}</td>
         <!--<td>{{ student.Engagement }}</td>-->
         <td>{{ student.EMPLID }}</td>
         <td>{{ student.Year }}</td>
         <td>{{ student.Course }}</td>
-        <td>
+        <td class="nowrap">
           {%if student.FeeStatus == "home"%}
             <div class="qtip tip-top" data-tip="UK fee status">
               <img class="flag tip" src="images/uk.png" alt="UK fee status"/>

@@ -1,13 +1,13 @@
 ---
 layout: default
-title: "Visa"
+title: "School"
 nav: "yes"
-sortTitle: "Visa"
+sortTitle: "School"
 customcss:
   - /vendor/datatables.min.css
 customjs:
   - /vendor/datatables.min.js
-  - /assets/studentvisa.js
+  - /assets/school.js
 ---
 
 
@@ -39,7 +39,7 @@ label i                       {padding-right: 0.25em}
 
 
 <div class="container main">
-  <h1>Student Visa List</h1>
+  <h1>School List</h1>
 
   <form class="form-inline">
       <label for="Filter">Filter</label>
@@ -67,10 +67,22 @@ label i                       {padding-right: 0.25em}
         </label>
       </div>
 
-      <div class="custom-control custom-switch">
-        <input type="checkbox" class="custom-control-input" id="StudentVisaToggle" checked>
-        <label class="custom-control-label" for="StudentVisaToggle">Student visa </label>
+      <label for="yearfilters">Year</label>
+      <div class="btn-group btn-group-toggle" id="yearfilters" data-toggle="buttons">
+        <label class="btn btn-outline-primary active" for="All">
+          <input type="radio" name="days" id="All" value="All" autocomplete="off" checked> All
+        </label>
+        <label class="btn btn-outline-primary" for="1">
+          <input type="radio" name="year" id="0-7" value="1" autocomplete="off"> Y1
+        </label>
+        <label class="btn btn-outline-primary" for="2">
+          <input type="radio" name="year" id="2" value="2" autocomplete="off"> Y2
+        </label>
+        <label class="btn btn-outline-primary" for="3">
+          <input type="radio" name="year" id="3" value="3" autocomplete="off"> Y3
+        </label>
       </div>
+
 
       <div class="custom-control custom-switch">
         <input type="checkbox" class="custom-control-input" id="ActiveToggle" checked>
@@ -96,7 +108,7 @@ label i                       {padding-right: 0.25em}
         <th scope="col">email</th>
         <th scope="col">phone</th>
         <!--<th scope="col">Engage</th>   -->
-        <th scope="col">School</th>
+        <th scope="col">Tutor</th>
         <th scope="col">Yr</th>
         <th scope="col">Course</th>
         <th scope="col">Status</th>
@@ -105,7 +117,7 @@ label i                       {padding-right: 0.25em}
     </thead>
     <tbody>
 
-{% for student in site.data.dummyTier4 %}
+{% for student in site.data.dummySchool %}
       <tr>
         <!-- hidden col for filters: active -->
         <td>
@@ -136,7 +148,7 @@ label i                       {padding-right: 0.25em}
         <td>{{ student.FirstName }}.{{ student.LastName }}@nottingham.ac.uk</td>
         <td>{{ student.phone }}</td>
         <!--<td>{{ student.Engagement }}</td>-->
-        <td>{{ student.School }}</td>
+        <td>{{ student.Tutor }}</td>
         <td>{{ student.Year }}</td>
         <td>{{ student.Course }}</td>
         <td class="nowrap">

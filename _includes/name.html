@@ -1,0 +1,13 @@
+<a href='student.html'>{{ student.FirstName }} {{ student.LastName }}</a>
+{% if student.Resits %}
+  (Resits)
+{% endif %}
+{% if student.Repeating %}
+  (Repeating)
+{% endif %}
+{% if student.Interrupted %}
+  (Interrupted)
+{% endif %}
+{% if student.Withdrawn %}
+  (Withdrawn)
+{% endif %}

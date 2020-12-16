@@ -15,6 +15,7 @@ body            {font-size: 90%}
 
 /* controls */
 #DataTable_filter { text-align: left; }
+.form-inline      {margin-bottom: 10px}
 
 /* table */
 .flag           {height: 24px; width: 24px; vertical-align: middle;  margin-right: 0.5em}

@@ -1,0 +1,8 @@
+{% assign days = student.DaysSinceLastActivity | divided_by: 13.0 %}
+{% if days > 2.3 %}
+    <div class="flagBar">{{ student.DaysSinceLastActivity }}</div>
+{% elsif days > 1.0 %}
+    <div class="warnBar">{{ student.DaysSinceLastActivity }}</div>
+{% else %}
+  <div class="okBar" style="width: {{ days| times: 100 }}%">{{ student.DaysSinceLastActivity }}</div>
+{% endif %}
