@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Tutees 2"
+title: "Tutees (lots)"
 nav: "yes"
 sortTitle: "ATutees 2"
 customcss:
@@ -11,7 +11,7 @@ customjs:
 ---
 
 <div class="container main">
-  <h1>Tutees 2</h1>
+  <h1>Tutees (lots)</h1>
 
   <table class="table table-hover table-sm" id="DataTable">
     <thead class="thead-dark">

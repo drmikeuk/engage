@@ -10,42 +10,14 @@ customjs:
   - /assets/studentvisa.js
 ---
 
-
-<style>
-
-table i         {font-size: 20px; }
-
-
-
-
-
-.controls             {min-height: 3em}
-.dataTables_info      {float: left;}
-.dt-buttons           {float:right; padding-right: 1em;}
-.btn                  {font-size: 100%}
-.dataTables_paginate  {float: right}
-
-.controlsbottom             {min-height: 3em; margin-top:10px}
-.foot                       {clear: both; margin-top: 1em; padding-top: 1em; border-top: 2px dashed #ccc}
-
-.form-inline label            {padding-right: 0.7em}
-.form-inline input            {margin-right: 2em}
-.form-inline .btn-group       {margin-right: 2em}
-.form-inline .custom-switch   {margin-right: 1em}
-label i                       {padding-right: 0.25em}
-</style>
-
-
-
-
 <div class="container main">
   <h1>Student Visa List</h1>
 
   <form class="form-inline">
-      <label for="Filter">Filter</label>
-      <input type="text" class="form-control" id="Filter" size="6">
+      <!--<label for="Filter"></label>-->
+      <input type="text" class="form-control" id="Filter" size="6" placeholder="Filter...">
 
-      <label for="daysfilters">Last activity</label>
+      <label for="daysfilters" class="label">Activity</label>
       <div class="btn-group btn-group-toggle" id="daysfilters" data-toggle="buttons">
         <label class="btn btn-outline-primary active" for="All">
           <input type="radio" name="days" id="All" value="All" autocomplete="off" checked> All
@@ -77,6 +49,12 @@ label i                       {padding-right: 0.25em}
         <label class="custom-control-label" for="ActiveToggle">Active students</label>
       </div>
 
+      <select class="form-control-sm"  id="schoolSelect">
+          <option value="">Filter by school...</option>
+          <option value="Economics">Economics</option>
+          <option value="Mathematics">Mathematics</option>
+      </select>
+
   </form>
 
 
@@ -87,9 +65,10 @@ label i                       {padding-right: 0.25em}
   <table class="table table-hover table-sm" id="DataTable" >
     <thead class="thead-dark">
       <tr>
-      <!-- first 2 are hidden; just for filters -->
-       <th scope="col">Active</th>
-       <th scope="col">Visa</th>
+        <!-- first 2 are hidden; just for filters -->
+        <th scope="col">Active</th>
+        <th scope="col">Visa</th>
+
         <th scope="col">Name</th>
         <th scope="col" >Last activity</th>
         <th scope="col">EMPLID</th>

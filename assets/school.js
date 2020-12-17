@@ -4,7 +4,7 @@ $(document).ready( function () {
         "pageLength": 25,
         "order": [[ 3, 'des' ], [ 2, 'asc' ]],
         //"dom": '<"controls"ipB>t<"controlsbottom"ipB>',   /* ie display info, pagination, buttons, table */
-        "dom": '<"row"<"col"i><"col right"<"activeToggle">Bp>>t',
+        "dom": '<"row"<"col"i><"col right"<"activeToggle">Bp>>t<"row"<"col"i><"col right"Bp>>',
         "buttons": ['copy', 'csv'],
         "language": { "info": "Showing _START_ to _END_ of _TOTAL_ students",
                       "infoFiltered":   "(filtered from _MAX_)" },

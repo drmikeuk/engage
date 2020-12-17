@@ -3,7 +3,7 @@ $(document).ready( function () {
     $('#DataTable').DataTable({
         "pageLength": 25,
         "order": [[ 3, 'des' ], [ 2, 'asc' ]],
-        "dom": '<"controls"ipB>t<"controlsbottom"ipB>',   /* ie display filter, table, info, pagination */
+        "dom": '<"row"<"col"i><"col right"<"activeToggle">Bp>>t<"row"<"col"i><"col right"Bp>>',
         "buttons": ['copy', 'csv'],
         "language": { "info": "Showing _START_ to _END_ of _TOTAL_ students",
                       "infoFiltered":   "(filtered from _MAX_)" },
@@ -88,5 +88,12 @@ $(document).ready( function () {
         $('#DataTable').DataTable().draw();
       });
 
+
+      // add search action to school select #schoolSelect
+      $('#schoolSelect').on('change',  function() {
+        var school = $(this).val();
+        //console.log ("Filter for school: " + school);
+        $('#DataTable').DataTable().column(7).search(school).draw();
+      });
 
 } );
