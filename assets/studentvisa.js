@@ -5,10 +5,11 @@ $(document).ready( function () {
         "order": [[ 3, 'des' ], [ 2, 'asc' ]],
         "dom": '<"controls"ipB>t<"controlsbottom"ipB>',   /* ie display filter, table, info, pagination */
         "buttons": ['copy', 'csv'],
-        "language": { search: 'Filter' },
+        "language": { "info": "Showing _START_ to _END_ of _TOTAL_ students",
+                      "infoFiltered":   "(filtered from _MAX_)" },
         "columnDefs": [ { "targets": [ 0, 1, 5 , 6],  "visible": false  }]
       });
-      
+
 
       // initial filter = active + visa
       $('#DataTable').DataTable()

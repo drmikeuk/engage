@@ -13,11 +13,6 @@ customjs:
 
 <style>
 
-table i         {font-size: 20px; }
-
-
-
-
 
 .controls             {min-height: 3em}
 .dataTables_info      {float: left;}
@@ -28,13 +23,14 @@ table i         {font-size: 20px; }
 .controlsbottom             {min-height: 3em; margin-top:10px}
 .foot                       {clear: both; margin-top: 1em; padding-top: 1em; border-top: 2px dashed #ccc}
 
-.form-inline label            {padding-right: 0.7em}
-.form-inline input            {margin-right: 2em}
-.form-inline .btn-group       {margin-right: 2em}
+.form-inline .label           {padding-right: 0.7em}
+.form-inline input            {margin-right: 1.5em}
+.form-inline .btn-group       {margin-right: 1.5em}
 .form-inline .custom-switch   {margin-right: 1em}
 label i                       {padding-right: 0.25em}
+#Filter::placeholder          {font-style: italic}
+#courseSelect                     {height: calc(1.5em + .75rem + 2px);}
 </style>
-
 
 
 
@@ -42,10 +38,10 @@ label i                       {padding-right: 0.25em}
   <h1>School List</h1>
 
   <form class="form-inline">
-      <label for="Filter">Filter</label>
-      <input type="text" class="form-control" id="Filter" size="6">
+      <!--<label for="Filter"></label>-->
+      <input type="text" class="form-control" id="Filter" size="6" placeholder="Filter...">
 
-      <label for="daysfilters">Last activity</label>
+      <label for="daysfilters" class="label">Activity</label>
       <div class="btn-group btn-group-toggle" id="daysfilters" data-toggle="buttons">
         <label class="btn btn-outline-primary active" for="All">
           <input type="radio" name="days" id="All" value="All" autocomplete="off" checked> All
@@ -67,7 +63,7 @@ label i                       {padding-right: 0.25em}
         </label>
       </div>
 
-      <label for="yearfilters">Year</label>
+      <label for="yearfilters" class="label">Year</label>
       <div class="btn-group btn-group-toggle" id="yearfilters" data-toggle="buttons">
         <label class="btn btn-outline-primary active" for="All">
           <input type="radio" name="days" id="All" value="All" autocomplete="off" checked> All
@@ -83,12 +79,21 @@ label i                       {padding-right: 0.25em}
         </label>
       </div>
 
-
+      <select class="form-control-sm"  id="courseSelect">
+          <option value="">Filter by course...</option>
+          <option value="GL11 Mathematics and Economics BSc">GL11 Mathematics and Economics BSc</option>
+          <option value="L140 Economics and Econometrics BSc">L140 Economics and Econometrics BSc</option>
+          <option value="L100 Economics BSc">L100 Economics BSc</option>
+          <option value="L160 Economics and International Economics BSc">L160 Economics and International Economics BSc</option>
+          <option value="LV15 Economics and Philosophy BA">LV15 Economics and Philosophy BA</option>
+          <option value="VLL5A Philosophy Politics and Economics BA">VLL5A Philosophy Politics and Economics BA</option>
+      </select>
+<!--      
       <div class="custom-control custom-switch">
         <input type="checkbox" class="custom-control-input" id="ActiveToggle" checked>
-        <label class="custom-control-label" for="ActiveToggle">Active students</label>
+        <label class="custom-control-label" for="ActiveToggle">Active</label>
       </div>
-
+-->
   </form>
 
 
