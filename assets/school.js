@@ -3,7 +3,8 @@ $(document).ready( function () {
     $('#DataTable').DataTable({
         "pageLength": 25,
         "order": [[ 3, 'des' ], [ 2, 'asc' ]],
-        "dom": '<"controls"ipB>t<"controlsbottom"ipB>',   /* ie display filter, table, info, pagination */
+        //"dom": '<"controls"ipB>t<"controlsbottom"ipB>',   /* ie display info, pagination, buttons, table */
+        "dom": '<"row"<"col"i><"col right"<"activeToggle">Bp>>t',
         "buttons": ['copy', 'csv'],
         "language": { "info": "Showing _START_ to _END_ of _TOTAL_ students",
                       "infoFiltered":   "(filtered from _MAX_)" },
@@ -14,6 +15,12 @@ $(document).ready( function () {
       $('#DataTable').DataTable()
           .column( 0 ).search( 'active' )
           .draw();
+
+
+      // add toggle to .activeToggle
+      var toggleCode = '<div class="custom-control custom-switch"><input type="checkbox" class="custom-control-input" id="ActiveToggle" checked><label class="custom-control-label" for="ActiveToggle">Active students</label></div>';
+      $('.activeToggle').append(toggleCode);
+
 
 
       // add search action to the ActiveToggle toggle   .column( 0 ).search( 'active' ) / no

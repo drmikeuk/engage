@@ -3,22 +3,22 @@
 .footer {background: #efefef; padding: 3em 0 2em; margin-top: 2em}
 
 /* header */
-.header h1      {font-size: 1.5rem}
-.navbar         {padding: 0}
-.main           {margin-top: 20px}
+.header h1          {font-size: 1.5rem}
+.navbar             {padding: 0}
+.main               {margin-top: 20px}
 
 /* main */
-body            {font-size: 90%}
-.nowrap         {white-space: nowrap;}
-.main h1        {padding-bottom: 20px}
+body                {font-size: 90%}
+.nowrap             {white-space: nowrap;}
+.main h1            {padding-bottom: 20px}
 
 
 /* controls */
-#DataTable_filter { text-align: left; }
-.form-inline      {margin-bottom: 10px}
+#DataTable_filter   {text-align: left; }
+.form-inline        {margin-bottom: 10px}
 
 /* table */
-table i         {font-size: 20px; }
+table i             {font-size: 20px; }
 .flag               {height: 24px; width: 24px; vertical-align: middle;  margin-right: 0.2em}
 .partTime           {height: 24px; width: 24px; vertical-align: middle;  margin-right: 0.2em; padding-left: 0.2em}
 .fa-globe           {font-size: 24px; color: #1D8348; vertical-align: middle;}

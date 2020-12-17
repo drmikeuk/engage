@@ -15,10 +15,12 @@ customjs:
 
 
 .controls             {min-height: 3em}
-.dataTables_info      {float: left;}
-.dt-buttons           {float:right; padding-right: 1em;}
+.right                {text-align: right}
+.dataTables_info      {}
+.dt-buttons           {padding-right: 1em;}
 .btn                  {font-size: 100%}
-.dataTables_paginate  {float: right}
+.activeToggle         {display: inline-flex; padding-right: 1em;}
+.dataTables_paginate  {display: inline-flex;}
 
 .controlsbottom             {min-height: 3em; margin-top:10px}
 .foot                       {clear: both; margin-top: 1em; padding-top: 1em; border-top: 2px dashed #ccc}
@@ -29,7 +31,7 @@ customjs:
 .form-inline .custom-switch   {margin-right: 1em}
 label i                       {padding-right: 0.25em}
 #Filter::placeholder          {font-style: italic}
-#courseSelect                     {height: calc(1.5em + .75rem + 2px);}
+#courseSelect                 {margin-left: auto; height: calc(1.5em + .75rem + 2px);}
 </style>
 
 
