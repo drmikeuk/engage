@@ -35,22 +35,7 @@ customjs:
             <td class="nowrap">{% include daysSinceLastActivity.html %}</td>
             <td>{{ student.Engagement }}</td>
             <td>{{ student.Year }}</td>
-            <td>
-              {%if student.FeeStatus == "home"%}
-                <div class="qtip tip-top" data-tip="UK fee status">
-                  <img class="flag tip" src="images/uk.png" alt="UK fee status"/>
-                </div>
-              {% elsif student.FeeStatus == "eu" %}
-                <div class="qtip tip-top" data-tip="EU fee status">
-                  <img class="flag tip" src="images/eu.png" alt="EU fee status"/>
-                </div>
-              {% elsif student.FeeStatus == "int" %}
-                <div class="qtip tip-top" data-tip="International fee status">     
-                  <i class="fas fa-globe flag tip"></i>
-                </div>
-              {% endif %}
-              {{ student.Tier4 }}
-              {{ student.RemoteStudy }}</td>
+            {% include status.html %}
             <!-- <td><i class="fas fa-chevron-circle-right"></i></td> -->
           </tr>
     {% endfor %}

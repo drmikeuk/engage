@@ -1,3 +1,25 @@
+<td class="nowrap"
+{%if student.FeeStatus == "home"%}
+  {% assign status = "1uk " %}
+{% elsif student.FeeStatus == "eu" %}
+  {% assign status = "2eu " %}
+{% elsif student.FeeStatus == "int" %}
+  {% assign status = "3int " %}
+{% endif %}
+
+{% if student.PartTime %}
+  {% assign status = status | append: "pt " %}
+{% endif %}
+
+{% if student.RemoteStudy %}
+  {% assign status = status | append: "remote " %}
+{% endif %}
+
+{% if student.Tier4 %}
+  {% assign status = status | append: "visa " %}
+{% endif %}
+
+data-sort="{{status}}">
 {%if student.FeeStatus == "home"%}
   <div class="qtip tip-top" data-tip="UK fee status">
     <img class="flag tip" src="images/uk.png" alt="UK fee status"/>
@@ -29,3 +51,4 @@
     <img class="partTime tip" src="images/partTime.png" alt="part time icon"/>
   </div>
 {% endif %}
+</td>

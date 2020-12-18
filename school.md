@@ -132,7 +132,7 @@ customjs:
         <td>{{ student.Tutor }}</td>
         <td>{{ student.Year }}</td>
         <td>{{ student.Course }}</td>
-        <td class="nowrap">{% include status.html %}</td>
+        {% include status.html %}
         <!-- <td><i class="fas fa-chevron-circle-right"></i></td> -->
       </tr>
 {% endfor %}
