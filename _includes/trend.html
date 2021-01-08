@@ -1,0 +1,13 @@
+{% if trend == "down" %}
+  <i class="fas fa-arrow-down fa-3x {{label}}"></i>
+  <b>{{label}}</b><br/>
+  less active <span class="label">vs previous 2wks</span>
+{% elsif trend == "up" %}
+  <i class="fas fa-arrow-up fa-3x {{label}}"></i>
+  <b>{{label}}</b><br/>
+  more active <span class="label">vs previous 2wks</span>
+{% else %}
+  <i class="fas fa-minus fa-3x {{label}}"></i>
+  <b>{{label}}</b><br/>
+  similar activity <span class="label">to previous 2wks</span>
+{% endif %}

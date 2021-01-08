@@ -5,13 +5,12 @@ nav: "yes"
 sortTitle: "XStudent"
 customjs:
   - /vendor/plotly-latest.min.js
-  - /assets/boxwhisker.js
-  - /assets/barchart.js
+  - /assets/student.js
 ---
 
 <style>
 /* SOURCE ROW */
-.datasource         {line-height: 1.2; padding-bottom: 10px; border-bottom: 4px solid #eee; }
+.datasource         {line-height: 1.2; padding: 15px 0; border-bottom: 3px solid #F8F9F9; }
 
 /* TITLE */
 .dataname           {font-size: 2rem; line-height: 1; margin-bottom: 1rem}
@@ -35,86 +34,21 @@ customjs:
 .barchart           {}
 
 /* TREND */
-.me                 {color: #1a296b }  /* uon blue 4 */
+.student            {color: #1a296b }  /* uon blue 4 */
 .cohort             {color: #ccc}  /* grey */
 .trend              {padding-left: 50px; font-size: 0.8rem; color: #333; }
 .trend i            {position: absolute; top: 0; left: 5px; }
+.labelXX              {font-size: 0.7rem; color: #666; }
 
 </style>
 
 <div class="container main">
   <h1>Student</h1>
-  <p style="margin-bottom: 3rem">some basic info ...</p>
+  <p style="margin-bottom: 3rem">put some basic info at the top ...</p>
 
-  <!-- ROW PER DATASOURCE -->
-  <div class="row datasource ">
-
-    <!-- LEFT -->
-    <div class="col-md-3">
-      <div class="row">
-        <div class="col dataname">
-          <!-- LABEL -->
-          Moodle
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col">
-          <!-- TILE -->
-          <div class="tile">
-            <p class="title">Last login</p>
-            <p class="number">3</p>
-            <p class="label">days ago</p>
-          </div>
-        </div>
-        <div class="col">
-          <!-- TILE -->
-          <div class="tile">
-            <p class="title">Activity to date</p>
-            <p class="number activityCount">475</p>
-            <p class="label">total clicks</p>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-
-    <!-- MIDDLE -->
-    <div class="col-md-6">
-      <!-- GRAPH -->
-      <div class="barchart" id="barchart"></div>
-    </div>
-
-
-    <!-- RIGHT -->
-    <div class="col-md-3">
-      <div class="row">
-        <div class="col trend">
-          <!-- TREND -->
-          <i class="fas fa-arrow-down fa-3x me"></i>
-          <b>student</b><br/>
-          less active vs previous 2wks
-        </div>
-        <div class="col trend">
-          <!-- TREND -->
-          <i class="fas fa-minus fa-3x cohort"></i> <!-- <i class="fas fa-arrow-up"></i>-->  
-          <b>cohort</b><br/>
-          similar activity
-        </div>
-      </div>    
-
-      <div class="row">
-        <div class="col">
-          <!-- CONTEXT -->
-
-          <div class="boxwhisker" id="boxwhisker">Total activity compared to cohort:</div>
-        </div>
-      </div>
-    </div>
-
-   </div><!-- END DATASOURCE ROW -->
-
+  {% for datasource in site.data.dummyStudent %}
+  {% include datasource.html %}
+  {% endfor %}
 
 
 </div>

@@ -1,0 +1,68 @@
+<!-- ROW PER DATASOURCE -->
+<div class="row datasource" >
+
+  <!-- LEFT -->
+  <div class="col-md-3">
+    <div class="row">
+      <div class="col dataname">
+        <!-- LABEL -->
+        {{datasource.datasourceTitle}}
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <!-- TILE -->
+        <div class="tile">
+          <p class="title">Last login</p>
+          <p class="number">{{datasource.lastLogin}}</p>
+          <p class="label">days ago</p>
+        </div>
+      </div>
+      <div class="col">
+        <!-- TILE -->
+        <div class="tile">
+          <p class="title">Activity to date</p>
+          <p class="number activityCount">{{datasource.activity}}</p>
+          <p class="label">{{datasource.activityLabel}}</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+  <!-- MIDDLE -->
+  <div class="col-md-6">
+    <!-- GRAPH -->
+    <div class="barchart" id="{{datasource.id}}"></div>
+  </div>
+
+
+  <!-- RIGHT -->
+  <div class="col-md-3">
+    <div class="row">
+      <div class="col trend">
+        <!-- TREND -->
+        {% assign label = "student" %}
+        {% assign trend = datasource.studentTrend %}
+        {% include trend.html %}
+      </div>
+      <div class="col trend">
+        <!-- TREND -->
+        {% assign label = "cohort" %}
+        {% assign trend = datasource.cohortTrend %}
+        {% include trend.html %}
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <!-- CONTEXT -->
+
+        <div class="boxwhisker" id="{{datasource.id | append: 'Boxwhisker'}}">Total activity compared to cohort:</div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- END DATASOURCE ROW -->

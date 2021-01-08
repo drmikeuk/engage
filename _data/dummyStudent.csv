@@ -1,0 +1,5 @@
+﻿row,datasourceTitle,id,lastLogin,activity,activityLabel,studentTrend,cohortTrend
+1,Moodle,moodle,3,475,total clicks,down,down
+2,MS Teams,teams,6,8,total meetings,down,similar
+3,Echo 360,echo,8,20,videos watched,down,similar
+4,QR scans,qr,-,0,total scans,similar,similar
