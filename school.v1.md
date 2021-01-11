@@ -55,14 +55,13 @@ customjs:
         </label>
       </div>
 
-      <select class="form-control-sm"  id="courseSelect">
+      <select class="form-control-sm"  id="courseSelect" style="max-width: 330px;">
           <option value="">Filter by course...</option>
-          <option value="GL11 Mathematics and Economics BSc">GL11 Mathematics and Economics BSc</option>
-          <option value="L140 Economics and Econometrics BSc">L140 Economics and Econometrics BSc</option>
-          <option value="L100 Economics BSc">L100 Economics BSc</option>
-          <option value="L160 Economics and International Economics BSc">L160 Economics and International Economics BSc</option>
-          <option value="LV15 Economics and Philosophy BA">LV15 Economics and Philosophy BA</option>
-          <option value="VLL5A Philosophy Politics and Economics BA">VLL5A Philosophy Politics and Economics BA</option>
+          <option value="U6UCMPAI - BSc Hons Computer Science with Artificial Intelligence">U6UCMPAI - BSc Hons Computer Science with Artificial Intelligence</option>
+          <option value="U6UCMPAIY - BSc Hons Computer Science and Artificial Intelligence with Year in Industry">U6UCMPAIY - BSc Hons Computer Science and Artificial Intelligence with Year in Industry</option>
+          <option value="U6UCMPSC - BSc Hons Computer Science">U6UCMPSC - BSc Hons Computer Science</option>
+          <option value="U6UCMPSCY - BSc Hons Computer Science with Year in Industry">U6UCMPSCY - BSc Hons Computer Science with Year in Industry</option>
+          <option value="U6UCSCMG - BSc Jt Hons Computer Science and Management">U6UCSCMG - BSc Jt Hons Computer Science and Management</option>  
       </select>
 <!--      
       <div class="custom-control custom-switch">
