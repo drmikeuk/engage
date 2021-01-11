@@ -56,10 +56,16 @@ table i             {font-size: 20px; }
 .warnBar    {background: #f8c400; width: 100%; padding: 2px 4px;}
 .okBar      {background: rgba(0, 155, 189, 0.4); padding: 2px 4px;}
 
+
 /* Yellow-eyed penguin & opaque uon blue */
 .flagBar    {background: #D04E59; width: 100%; color: white; padding: 2px 4px;}
 .warnBar    {background: #FAE093; width: 100%; padding: 2px 4px;}
 .okBar      {background: rgba(0, 155, 189, 0.4); padding: 2px 4px;}
+
+.flagPill    {display: inline-block; background: #D04E59; color: white; padding: 2px 4px;}
+.warnPill    {display: inline-block; background: #FAE093; padding: 2px 4px;}
+.okPill      {display: inline-block; /*border: 1px solid rgba(0, 155, 189, 0.2); */ padding: 2px 4px;}
+
 
 /* tooltips  https://codepen.io/deineko/pen/YZeQJP */
 .qtip {

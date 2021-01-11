@@ -1,0 +1,8 @@
+{% assign assignments = student.Assignments | divided_by: 1 %}
+{% if assignments < 50 %}
+    <div class=" flagPill">{{ student.Assignments }}%</div>
+{% elsif assignments < 76 %}
+    <div class=" warnPill">{{ student.Assignments }}%</div>
+{% else %}
+    <div class="okPill">{{ student.Assignments }}%</div>
+{% endif %}
