@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Student v1"
+title: "Student WIP"
 nav: "no"
 sortTitle: "XStudent"
 customjs:

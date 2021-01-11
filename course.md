@@ -1,7 +1,7 @@
 ---
 layout: default
 title: "Course"
-nav: "yes"
+nav: "no"
 sortTitle: "Course"
 customcss:
   - /vendor/datatables.min.css

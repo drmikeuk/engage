@@ -22,7 +22,7 @@ customjs:
         <!--<th scope="col">Engage</th>-->
         <th scope="col">EMPLID</th>
         <th scope="col">Yr</th>
-        <th scope="col">Course</th>        
+        <th scope="col">Programme</th>        
         <th scope="col">Status</th>
         <!-- <th scope="col"></th>  -->
       </tr>
@@ -36,7 +36,7 @@ customjs:
         <!--<td>{{ student.Engagement }}</td>-->
         <td>{{ student.EMPLID }}</td>
         <td>{{ student.Year }}</td>
-        <td>{{ student.Course }}</td>
+        <td>{{ student.PlanCode }} - {{ student.Programme }}</td>
         {% include status.html %}
         <!-- <td><i class="fas fa-chevron-circle-right"></i></td> -->
       </tr>

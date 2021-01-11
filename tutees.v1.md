@@ -1,8 +1,8 @@
 ---
 layout: default
-title: "Tutees"
+title: "Tutees 1"
 nav: "yes"
-sortTitle: "ATutees"
+sortTitle: "ATutees 1"
 customcss:
   - /vendor/datatables.min.css
 customjs:
@@ -22,7 +22,7 @@ customjs:
         <!--<th scope="col">Engage</th>-->
         <th scope="col">EMPLID</th>
         <th scope="col">Yr</th>
-        <th scope="col">Course</th>        
+        <th scope="col">Programme</th>        
         <th scope="col">Status</th>
         <!-- <th scope="col"></th>  -->
       </tr>
@@ -31,12 +31,12 @@ customjs:
 
 {% for student in site.data.dummyTutees %}
       <tr>
-        <td class="nowrap">{% include name.html %}</td>
+        <td class="nowrap">{% include nameShort.html %}</td>
         <td class="nowrap">{% include daysSinceLastActivity.html %}</td>
         <!--<td>{{ student.Engagement }}</td>-->
         <td>{{ student.EMPLID }}</td>
         <td>{{ student.Year }}</td>
-        <td>{{ student.Course }}</td>
+        <td>{{ student.PlanCode }} - {{ student.Programme }}</td>
         {% include status.html %}
         <!-- <td><i class="fas fa-chevron-circle-right"></i></td> -->
       </tr>

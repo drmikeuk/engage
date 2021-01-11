@@ -1,0 +1,21 @@
+<a href='student.html'>{{ student.FirstName }} {{ student.LastName }}</a>
+{% if student.Resits %}
+<div class="qtip tip-top" data-tip="Resits">
+  <i class="fas fa-times-circle"></i>
+</div>
+{% endif %}
+{% if student.Repeating %}
+  <div class="qtip tip-top" data-tip="Repeating">
+    <i class="fas fa-times-circle"></i>
+  </div>
+{% endif %}
+{% if student.Interrupted %}
+  <div class="qtip tip-top" data-tip="Interrupted">
+    <i class="fas fa-times-circle"></i>
+  </div>
+{% endif %}
+{% if student.Withdrawn %}
+  <div class="qtip tip-top" data-tip="Withdrawn">
+    <i class="fas fa-times-circle"></i>
+  </div>
+{% endif %}

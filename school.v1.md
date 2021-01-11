@@ -1,8 +1,8 @@
 ---
 layout: default
-title: "School"
+title: "School 1"
 nav: "yes"
-sortTitle: "School"
+sortTitle: "School 1"
 customcss:
   - /vendor/datatables.min.css
 customjs:
@@ -11,7 +11,7 @@ customjs:
 ---
 
 <div class="container main">
-  <h1>School List</h1>
+  <h1>School List v1</h1>
 
   <form class="form-inline">
       <!--<label for="Filter"></label>-->
@@ -84,14 +84,14 @@ customjs:
        <th scope="col">Active</th>
        <th scope="col">Visa</th>
         <th scope="col">Name</th>
-        <th scope="col" >Last activity</th>
+        <th scope="col" class="nowrap">Last activity</th>
         <th scope="col">EMPLID</th>
         <th scope="col">email</th>
         <th scope="col">phone</th>
         <!--<th scope="col">Engage</th>   -->
         <th scope="col">Tutor</th>
         <th scope="col">Yr</th>
-        <th scope="col">Course</th>
+        <th scope="col">Programme</th>
         <th scope="col">Status</th>
         <!-- <th scope="col"></th>  -->
       </tr>
@@ -129,9 +129,9 @@ customjs:
         <td>{{ student.FirstName }}.{{ student.LastName }}@nottingham.ac.uk</td>
         <td>{{ student.phone }}</td>
         <!--<td>{{ student.Engagement }}</td>-->
-        <td>{{ student.Tutor }}</td>
+        <td class="nowrap">{{ student.Tutor }}</td>
         <td>{{ student.Year }}</td>
-        <td>{{ student.Course }}</td>
+        <td>{{ student.PlanCode }} - {{ student.Programme }}</td>
         {% include status.html %}
         <!-- <td><i class="fas fa-chevron-circle-right"></i></td> -->
       </tr>

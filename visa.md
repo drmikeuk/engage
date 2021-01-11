@@ -77,7 +77,7 @@ customjs:
         <!--<th scope="col">Engage</th>   -->
         <th scope="col">School</th>
         <th scope="col">Yr</th>
-        <th scope="col">Course</th>
+        <th scope="col">Programme</th>
         <th scope="col">Status</th>
         <!-- <th scope="col"></th>  -->
       </tr>

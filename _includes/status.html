@@ -48,7 +48,13 @@ data-sort="{{status}}">
 
 {% if student.PartTime %}
   <div class="qtip tip-top" data-tip="Part Time">
-    <img class="partTime tip" src="images/partTime.png" alt="part time icon"/>
+    <i class="fas fa-user-clock"></i>
+  </div>
+{% endif %}
+
+{% if student.Placement %}
+  <div class="qtip tip-top" data-tip="Possibly on placement">
+    <i class="fas fa-plane"></i>
   </div>
 {% endif %}
 </td>
