@@ -18,7 +18,7 @@ $(document).ready( function () {
 
 
       // add toggle to .activeToggle
-      var toggleCode = '<div class="custom-control custom-switch"><input type="checkbox" class="custom-control-input" id="ActiveToggle" checked><label class="custom-control-label" for="ActiveToggle">Active students</label></div>';
+      var toggleCode = '<div class="custom-control custom-switch"><input type="checkbox" class="custom-control-input" id="ActiveToggle" checked><label class="custom-control-label" for="ActiveToggle">In attendance</label></div>';
       $('.activeToggle').append(toggleCode);
 
 
