@@ -87,11 +87,11 @@ $(document).ready( function () {
         if (year == "All") {
           //console.log ("Reset search (all)");
           // call search api and redraw table
-          $('#DataTable').DataTable().column(8).search('').draw();
+          $('#DataTable').DataTable().column(10).search('').draw();
         } else {
           //console.log ("Search " + year);
           // call search api and redraw table
-          $('#DataTable').DataTable().column(8).search(year).draw();
+          $('#DataTable').DataTable().column(10).search(year).draw();
         }
       });
 
