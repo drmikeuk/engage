@@ -7,6 +7,10 @@
   {% assign status = "3int " %}
 {% endif %}
 
+{% if student.Tier4 %}
+  {% assign status = status | append: "visa " %}
+{% endif %}
+
 {% if student.PartTime %}
   {% assign status = status | append: "pt " %}
 {% endif %}
@@ -15,9 +19,10 @@
   {% assign status = status | append: "remote " %}
 {% endif %}
 
-{% if student.Tier4 %}
-  {% assign status = status | append: "visa " %}
+{% if student.Placement %}
+  {% assign status = status | append: "zzz " %}
 {% endif %}
+
 
 data-sort="{{status}}">
 {%if student.FeeStatus == "home"%}
