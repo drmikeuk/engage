@@ -49,7 +49,10 @@ table i             {font-size: 20px; }
 .fa-plane           {color: #6d6d6d; vertical-align: middle; padding-left: 0.2em }
 .fa-chevron-circle-right {color: #007bff}
 .fa-times-circle    {color: #6d6d6d; vertical-align: middle; padding-left: 0.5em }
-
+.fa-exclamation-circle {color: #6d6d6d; vertical-align: middle; padding-left: 0.1em }
+.fa-arrow-down        {color: #f8c400; vertical-align: middle; padding-right: 0.1em }
+.fa-angle-down        {color: #6d6d6d; vertical-align: middle; padding-left: 0.1em}
+.fa-angle-double-down {color: #f8c400; vertical-align: middle; padding-left: 0.1em}
 
 /* warning bars */
 .flagBar    {background: #d80f2a; width: 100%; color: white; padding: 2px 4px;}
@@ -65,6 +68,8 @@ table i             {font-size: 20px; }
 .flagPill    {display: inline-block; background: #D04E59; color: white; padding: 2px 4px;}
 .warnPill    {display: inline-block; background: #FAE093; padding: 2px 4px;}
 .okPill      {display: inline-block; /*border: 1px solid rgba(0, 155, 189, 0.2); */ padding: 2px 4px;}
+
+.truncate { width: 150px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;}
 
 
 /* tooltips  https://codepen.io/deineko/pen/YZeQJP */
