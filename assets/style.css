@@ -51,7 +51,7 @@ table i             {font-size: 20px; }
 .fa-times-circle    {color: #6d6d6d; vertical-align: middle; padding-left: 0.5em }
 .fa-exclamation-circle {color: #6d6d6d; vertical-align: middle; padding-left: 0.1em }
 .fa-arrow-down        {color: #f8c400; vertical-align: middle; padding-right: 0.1em }
-.fa-angle-down        {color: #6d6d6d; vertical-align: middle; padding-left: 0.1em}
+.fa-angle-down        {color: #f8c400; vertical-align: middle; padding-left: 0.1em}
 .fa-angle-double-down {color: #f8c400; vertical-align: middle; padding-left: 0.1em}
 
 /* warning bars */

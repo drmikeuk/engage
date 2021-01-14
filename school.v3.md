@@ -95,7 +95,7 @@ customjs:
         <th scope="col" class="nowrap">Last activity</th>
     <th scope="col">Active</th>   
     <th scope="col">Change</th>
-        <th scope="col">Assign.</th>
+        <th scope="col">Late</th>
         <th scope="col">Flags</th>  
         <th scope="col">EMPLID</th>
         <th scope="col">email</th>
@@ -151,7 +151,7 @@ customjs:
     <div class="qtip tip-top" data-tip="drop in activity last 2wks"><i class="fas fa-arrow-down"></i></div>{{ student.Change }}%
     {% endif %}
     </td>    
-        <td>{% include assignments.html %}</td>
+        <td>{% include assignments3.html %}</td>
         {% include status.html %}
         <td>{{ student.EMPLID }}</td>
         <td>{{ student.FirstName }}.{{ student.LastName }}@nottingham.ac.uk</td>

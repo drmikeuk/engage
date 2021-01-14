@@ -1,0 +1,9 @@
+<!-- reverse so showing %late not %on time -->
+{% assign assignments = 100 | minus: student.Assignments %}
+{% if assignments > 49 %}
+    <div class="flagPill">{{ assignments }}%</div>
+{% elsif assignments > 29 %}
+    <div class="warnPill">{{ assignments }}%</div>
+{% else %}
+    <div class="okPill">{{ assignments }}%</div>
+{% endif %}
