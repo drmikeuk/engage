@@ -132,7 +132,7 @@ customjs:
             {% endif %}
         </td>         
 
-        <td class="nowrap" data-sort="{{student.LastName, student.FirstName}}">{% include nameShort.html %}</td>
+        <td class="nowrap" data-sort="{{student.LastName}} {{student.FirstName}}">{% include nameShort.html %}</td>
         <td class="nowrap">{% include daysSinceLastActivity.html %}</td>
     <td>{{ student.Active }}
     {%if student.Bottom == "10"%}
